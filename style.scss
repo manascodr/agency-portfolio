@@ -1,0 +1,145 @@
+// styles.scss
+
+// Import fonts if you have custom ones
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@400;700&display=swap');
+
+// Variables
+$primary-color: #ffffff;
+$secondary-color: #cccccc;
+$font-main: 'DM Sans', sans-serif;
+$font-agency: 'Playfair Display', serif;
+
+// Base styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background: url('background.png') no-repeat center center / cover;
+  color: $primary-color;
+  font-family: $font-main;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $secondary-color;
+  }
+}
+
+// Header
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 3rem;
+  font-size: 0.95rem;
+
+  .logo {
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+
+  .nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+  }
+}
+
+// Hero section
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: calc(100vh - 80px); // adjust based on header height
+  padding: 0 2rem;
+
+  .hero-content {
+    max-width: 800px;
+
+    .small-text {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: $secondary-color;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 500;
+      line-height: 1.2;
+
+      .agency {
+        font-family: $font-agency;
+        font-size: 3.5rem;
+        display: block;
+        margin-top: 0.5rem;
+      }
+    }
+
+    .description {
+      font-size: 0.95rem;
+      color: $secondary-color;
+      margin: 1.5rem 0;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .scroll-indicator {
+      margin-top: 2rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+
+      .arrow {
+        font-size: 1.5rem;
+        margin-top: 0.3rem;
+      }
+    }
+
+    .cta {
+      margin-top: 2rem;
+
+      img {
+        width: 40px;
+        height: 40px;
+        filter: brightness(0) invert(1);
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
+
+// Footer
+.footer {
+  text-align: center;
+  font-size: 0.8rem;
+  padding: 1.5rem;
+  color: $secondary-color;
+}
+
+// Optional: Responsive adjustments
+@media (max-width: 768px) {
+  .hero .hero-content h1 {
+    font-size: 2.2rem;
+
+    .agency {
+      font-size: 2.5rem;
+    }
+  }
+}
